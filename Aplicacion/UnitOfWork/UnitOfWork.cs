@@ -25,7 +25,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         {
             if (_porDefecto1 == null)
             {
-                _porDefecto1 = new PorDefecto1Repository(_context);
+                _porDefecto1 = new porDefecto1Repository(_context);
             }
             return _porDefecto1;
         }
@@ -37,7 +37,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         {
             if (_porDefecto2 == null)
             {
-                _porDefecto2 = new PorDefecto2Repository(_context);
+                _porDefecto2 = new porDefecto2Repository(_context);
             }
             return _porDefecto2;
         }
@@ -49,7 +49,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         {
             if (_porDefecto3 == null)
             {
-                _porDefecto3 = new PorDefecto3Repository(_context);
+                _porDefecto3 = new porDefecto3Repository(_context);
             }
             return _porDefecto3;
         }

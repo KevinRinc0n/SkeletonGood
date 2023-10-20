@@ -5,7 +5,7 @@ public class Params
     private int _pageSize = 1;
     private const int MaxPageSize = 50;
     private int _pageIndex = 1;
-    private string _search;
+    private string? _search;
 
     public int PageSize
     {
@@ -17,7 +17,7 @@ public class Params
         get => _pageIndex;
         set => _pageIndex = (value <= 0) ? 1 : value;
     }
-    public string Search
+    public string? Search
     {
         get => _search;
         set => _search = (!String.IsNullOrEmpty(value)) ? value.ToLower() : "";

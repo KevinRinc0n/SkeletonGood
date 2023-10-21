@@ -1,6 +1,7 @@
 using Dominio.Entities;
 using Dominio.Interfaces;
 using Persistencia.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Aplicacion.Repository;
 
@@ -12,4 +13,6 @@ public class VentaRepository : GenericRepository<Venta>, IVenta
     {
         _context = context;
     }
+
+   
 }

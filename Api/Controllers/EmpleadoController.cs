@@ -105,6 +105,15 @@ public class EmpleadoController : BaseApiController
         return NoContent();
     }
 
+    [HttpGet("ventas")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<Empleado>>> GetNombre(string NombreEmpleado)
+    {
+        var empleadosXCargo = await unitofwork.Empleados.ventas(NombreEmpleado);
+        return mapper.Map<List<Empleado>>(empleadosXCargo);
+    }
+
     private ActionResult Notfound()
     {
         throw new NotImplementedException();

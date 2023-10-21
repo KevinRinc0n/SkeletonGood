@@ -6,7 +6,7 @@ public class Prenda : BaseEntity
     public string Nombre { get; set; }
     public double valorUnitCop { get; set; } 
     public double valorUnitUsd { get; set; }
-    public int IdEstadoFk { get; set; }
+    public int IdEstadoFk { get; set; } 
     public Estado Estado { get; set; }
     public int IdTipoProteccionFk { get; set; }
     public TipoProteccion TipoProteccion { get; set; }

@@ -10,7 +10,7 @@ namespace Api.Controllers;
 
 [ApiVersion("1.0")]
 [ApiVersion("1.1")]
-// [Authorize (Roles= "Administrador")]        
+[Authorize (Roles= "Administrador")]        
 
 public class CargoController : BaseApiController
 {
@@ -118,23 +118,4 @@ public class CargoController : BaseApiController
         var empleadosXCargo = await unitofwork.Cargos.mostrarDeterminado(NombreDeterminado);
         return mapper.Map<List<CargoDto>>(empleadosXCargo);
     }
-
-
-//     [HttpGet("nombrepeticion")]
-//     [ProducesResponseType(StatusCodes.Status200OK)]
-//     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-//     public async Task<ActionResult<IEnumerable<porDefecto2>>> getconparatmetro(string nombre)
-//     {
-//         var porDefecto2 = await unitofwork.porDefectos2.metodo(nombre);
-//         return mapper.Map<List<porDefecto2>>(porDefecto2);
-//     }
-
-//     [HttpGet("nombrepeticion")]
-//     [ProducesResponseType(StatusCodes.Status200OK)]
-//     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-//     public async Task<ActionResult<IEnumerable<Object>>> Getnomm()
-//     {
-//         var porDefecto2 = await unitofwork.porDefectos2.metodo();
-//         return Ok(porDefecto2);
-//     }
 }

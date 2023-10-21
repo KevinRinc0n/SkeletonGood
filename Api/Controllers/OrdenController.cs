@@ -10,7 +10,7 @@ namespace Api.Controllers;
 
 [ApiVersion("1.0")]
 [ApiVersion("1.1")]
-[Authorize (Roles= "Administrador")]        
+// [Authorize (Roles= "Administrador")]        
 
 public class OrdenController : BaseApiController
 {
@@ -103,6 +103,24 @@ public class OrdenController : BaseApiController
         unitofwork.Ordenes.Remove(Orden);
         await unitofwork.SaveAsync();
         return NoContent();
+    }
+
+    [HttpGet("proceso")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<OrdenDto>>> GetOrdenesProceso()
+    {
+        var ordenesEnProce = await unitofwork.Ordenes.enProceso();
+        return mapper.Map<List<OrdenDto>>(ordenesEnProce);
+    }
+
+    [HttpGet("clienteEspecifico")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<OrdenClienteDto>>> GetClienteEspeci(string idClientee)
+    {
+        var clienteEspe = await unitofwork.Ordenes.ordenesClienteEspecifico(idClientee);
+        return mapper.Map<List<OrdenClienteDto>>(clienteEspe);
     }
 
     private ActionResult Notfound()

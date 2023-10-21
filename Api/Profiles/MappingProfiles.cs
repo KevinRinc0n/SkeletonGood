@@ -8,8 +8,7 @@ public class MappingProfiles : Profile
 {
     public MappingProfiles()
     {
-        CreateMap<porDefecto1, porDefecto1Dto>().ReverseMap();
-
-        CreateMap<porDefecto2, porDefecto2Dto>().ReverseMap();
+        CreateMap<Empleado, EmpleadoDto>().ReverseMap();
+        CreateMap<Cargo, CargoDto>().ReverseMap();
     }
 }

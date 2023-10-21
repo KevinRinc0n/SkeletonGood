@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
 [ApiController]
-[Route("cualquiernombre/[controller]")]
+[Route("Ropa/[controller]")]
 public class BaseApiController : ControllerBase
 {
 

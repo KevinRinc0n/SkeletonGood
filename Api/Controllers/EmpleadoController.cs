@@ -108,10 +108,10 @@ public class EmpleadoController : BaseApiController
     [HttpGet("ventas")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<Empleado>>> GetNombre(string NombreEmpleado)
+    public async Task<ActionResult<IEnumerable<EmpleadoDto>>> GetNombre(int empleadoId)
     {
-        var empleadosXCargo = await unitofwork.Empleados.ventas(NombreEmpleado);
-        return mapper.Map<List<Empleado>>(empleadosXCargo);
+        var empleadosXCargo = await unitofwork.Empleados.ventas(empleadoId);
+        return mapper.Map<List<EmpleadoDto>>(empleadosXCargo);
     }
 
     private ActionResult Notfound()

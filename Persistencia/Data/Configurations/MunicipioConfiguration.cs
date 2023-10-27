@@ -25,7 +25,7 @@ public class MunicipioConfiguration : IEntityTypeConfiguration<Municipio>
         builder.HasData(
             new Municipio { Id = 1, Nombre = "Bucaramanga", IdDepartamentoFk = 1}, 
             new Municipio { Id = 2, Nombre = "Piedecuesta", IdDepartamentoFk = 2},
-            new Municipio { Id = 3, Nombre = "Giron", IdDepartamentoFk = 1}
+            new Municipio { Id = 3, Nombre = "Giron", IdDepartamentoFk = 1} 
         );
     }
 }

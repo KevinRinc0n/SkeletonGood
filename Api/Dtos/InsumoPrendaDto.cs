@@ -2,5 +2,5 @@ namespace Api.Dtos;
 
 public class InsumoPrendaDto
 {
-    public int Cantidad { get; set; }    
+    public InsumoDto Insumo { get; set; }    
 }

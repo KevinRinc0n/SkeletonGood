@@ -6,4 +6,5 @@ public class ClienteOrdenDto
     public string IdCliente { get; set; }
     public string Nombre { get; set; }
     public MunicipioDto Municipio { get; set; }
+    public ICollection<OrdenClienteDto> Ordenes { get; set; }
 }

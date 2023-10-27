@@ -6,5 +6,5 @@ public class InsumoPrenda : BaseEntity
     public Insumo Insumo { get; set; }    
     public int IdPrendaFk { get; set; }    
     public Prenda Prenda { get; set; }  
-    public int Cantidad { get; set; }    
+    public int Cantidad { get; set; }     
 }

@@ -105,6 +105,15 @@ public class InventarioController : BaseApiController
         return NoContent();
     }
 
+    [HttpGet("prendasYTallas")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<InventarioDto>>> GetTallasPrendas()
+    {
+        var prendasTallas = await unitofwork.Inventarios.productosYTallas();
+        return mapper.Map<List<InventarioDto>>(prendasTallas);
+    }
+
     private ActionResult Notfound()
     {
         throw new NotImplementedException();

@@ -12,8 +12,9 @@ public class Prenda : BaseEntity
     public TipoProteccion TipoProteccion { get; set; }
     public int IdGeneroFk { get; set; }
     public Genero Genero { get; set; }
+    public int IdInventarioFk { get; set; }
+    public Inventario Inventario { get; set; }
     public ICollection<InsumoPrenda> InsumosPrendas { get; set; }
-    public ICollection<Inventario> Inventarios { get; set; }
     public ICollection<DetalleOrden> DetallesOrdenes { get; set; }
-    public ICollection<Insumo> Insumos { get; set; }
+    public ICollection<Insumo> Insumos { get; set; } 
 }

@@ -105,15 +105,6 @@ public class InsumoController : BaseApiController
         return NoContent();
     }
 
-    // [HttpGet("insumosXPrenda")]
-    // [ProducesResponseType(StatusCodes.Status200OK)]
-    // [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    // public async Task<ActionResult<IEnumerable<Insumo>>> GetCodigo(int CodigoDeterminado)
-    // {
-    //     var insumosPorPrenda = await unitofwork.Insumos.mostrarDeterminado(CodigoDeterminado);
-    //     return mapper.Map<List<Insumo>>(insumosPorPrenda);
-    // }
-
     private ActionResult Notfound()
     {
         throw new NotImplementedException();

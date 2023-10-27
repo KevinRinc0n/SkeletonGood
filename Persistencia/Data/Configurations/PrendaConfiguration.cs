@@ -53,11 +53,15 @@ public class PrendaConfiguration : IEntityTypeConfiguration<Prenda>
         .WithMany(c => c.Prendas)
         .HasForeignKey(c => c.IdTipoProteccionFk);
 
+        builder.HasOne(c => c.Inventario)
+        .WithMany(c => c.Prendas)
+        .HasForeignKey(c => c.IdInventarioFk);
+
         builder.HasData(
-            new Prenda { Id = 1, IdPrenda = 34343, Nombre = "pantalon anti acido", valorUnitCop = 4.99, valorUnitUsd =  23, IdEstadoFk = 1, IdTipoProteccionFk = 2, IdGeneroFk = 1},
-            new Prenda { Id = 2, IdPrenda = 143, Nombre = "camisa", valorUnitCop = 500, valorUnitUsd =  3000, IdEstadoFk = 2, IdTipoProteccionFk = 1, IdGeneroFk = 1},
-            new Prenda { Id = 3, IdPrenda = 234, Nombre = "camisa permeable", valorUnitCop = 1599, valorUnitUsd = 7500, IdEstadoFk = 3, IdTipoProteccionFk = 1, IdGeneroFk = 2},
-            new Prenda { Id = 4, IdPrenda = 134343, Nombre = "guantes", valorUnitCop = 7.33, valorUnitUsd = 52.3, IdEstadoFk = 3, IdTipoProteccionFk = 2, IdGeneroFk = 1}
+            new Prenda { Id = 1, IdInventarioFk = 1, IdPrenda = 34343, Nombre = "pantalon anti acido", valorUnitCop = 4.99, valorUnitUsd =  23, IdEstadoFk = 1, IdTipoProteccionFk = 2, IdGeneroFk = 1},
+            new Prenda { Id = 2, IdInventarioFk = 2, IdPrenda = 143, Nombre = "camisa", valorUnitCop = 500, valorUnitUsd =  3000, IdEstadoFk = 2, IdTipoProteccionFk = 1, IdGeneroFk = 1},
+            new Prenda { Id = 3, IdInventarioFk = 4, IdPrenda = 234, Nombre = "camisa permeable", valorUnitCop = 1599, valorUnitUsd = 7500, IdEstadoFk = 3, IdTipoProteccionFk = 1, IdGeneroFk = 2},
+            new Prenda { Id = 4, IdInventarioFk = 3, IdPrenda = 134343, Nombre = "guantes", valorUnitCop = 7.33, valorUnitUsd = 52.3, IdEstadoFk = 3, IdTipoProteccionFk = 2, IdGeneroFk = 1}
         );
     } 
 } 

@@ -31,5 +31,27 @@ public class MappingProfiles : Profile
         CreateMap<Orden, OrdenClienteDto>().ReverseMap();
 
         CreateMap<Prenda, PrendaDto>().ReverseMap();
+
+        CreateMap<InsumoPrenda, InsumooPrendaDto>().ReverseMap();
+
+        CreateMap<Insumo, InsumoDto>().ReverseMap();
+
+        CreateMap<Proveedor, ProveedorDto>().ReverseMap();
+
+        CreateMap<InsumoProveedor, InsumoProveedorDto>().ReverseMap();
+
+        CreateMap<Prenda, PrendaaDto>().ReverseMap();
+
+        CreateMap<Venta, VentaDto>().ReverseMap();
+
+        CreateMap<DetalleVenta, DetalleVentaDto>().ReverseMap();
+
+        CreateMap<Inventario, InventarioDto>().ReverseMap();
+
+        CreateMap<Talla, TallaDto>().ReverseMap();
+
+        CreateMap<Prenda, PrendaInventarioDto>().ReverseMap();
+
+        CreateMap<Inventario, InventarioPrendaDto>().ReverseMap();
     }
 }

@@ -10,4 +10,5 @@ public class Venta : BaseEntity
     public int IdFormaPagoFk { get; set; }
     public FormaPago FormaPago { get; set; }
     public ICollection<DetalleVenta> DetallesVentas { get; set; } 
+    public ICollection<Inventario> Inventarios { get; set; }
 }

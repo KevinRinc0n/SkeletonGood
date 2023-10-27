@@ -105,6 +105,15 @@ public class ClienteController : BaseApiController
         return NoContent();
     }
 
+    [HttpGet("clienteEspecifico")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<ClienteOrdenDto>>> GetClienteEspeci(string idClientee)
+    {
+        var clienteEspe = await unitofwork.Clientes.ordenesClienteEspecifico(idClientee);
+        return mapper.Map<List<ClienteOrdenDto>>(clienteEspe);
+    }
+
     private ActionResult Notfound()
     {
         throw new NotImplementedException();

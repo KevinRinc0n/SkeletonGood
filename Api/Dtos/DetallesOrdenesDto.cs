@@ -2,6 +2,7 @@ namespace Api.Dtos;
 
 public class DetallesOrdenesDto
 {
-    public PrendaDto Prenda { get; set; }
-    
+    public int Id { get; set; }
+    public int CantidadProducida { get; set; }
+    public PrendaaDto Prenda { get; set; }
 }

@@ -33,6 +33,10 @@ public class ProveedorConfiguration : IEntityTypeConfiguration<Proveedor>
         .WithMany(c => c.Proveedores)
         .HasForeignKey(c => c.IdTipoPersonaFk);
 
+        builder.HasOne(c => c.Municipio)
+        .WithMany(c => c.Proveedores)
+        .HasForeignKey(c => c.IdMunicipioFk);
+
         builder.HasMany(p => p.Insumos)
         .WithMany(r => r.Proveedores)
         .UsingEntity<InsumoProveedor>(
@@ -51,10 +55,10 @@ public class ProveedorConfiguration : IEntityTypeConfiguration<Proveedor>
             }
         );
 
-        // builder.HasData(
-        //     new Proveedor { Id = 1, NitProveedor = "98989", Nombre = "Danna", IdTipoPersonaFk = 1, IdMunicipioFk = 2}, 
-        //     new Proveedor { Id = 2, NitProveedor = "4343", Nombre = "Ivan", IdTipoPersonaFk = 2, IdMunicipioFk = 1},
-        //     new Proveedor { Id = 3, NitProveedor = "4343434", Nombre = "Tomas", IdTipoPersonaFk = 1, IdMunicipioFk = 3}
-        // );
+        builder.HasData(
+            new Proveedor { Id = 1, NitProveedor = "98989", Nombre = "Danna", IdTipoPersonaFk = 1, IdMunicipioFk = 2}, 
+            new Proveedor { Id = 2, NitProveedor = "4343", Nombre = "Ivan", IdTipoPersonaFk = 2, IdMunicipioFk = 1},
+            new Proveedor { Id = 3, NitProveedor = "4343434", Nombre = "Tomas", IdTipoPersonaFk = 1, IdMunicipioFk = 3}
+        );
     }
 }

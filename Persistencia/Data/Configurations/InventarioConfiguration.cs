@@ -17,10 +17,6 @@ public class InventarioConfiguration : IEntityTypeConfiguration<Inventario>
         builder.HasIndex(c => c.CodigoInv)
         .IsUnique();
 
-        builder.Property(c => c.IdPrendaFk)
-        .IsRequired()
-        .HasColumnType("int");
-
         builder.Property(c => c.valorVtaCop)
         .IsRequired()
         .HasColumnType("double");
@@ -28,9 +24,13 @@ public class InventarioConfiguration : IEntityTypeConfiguration<Inventario>
         builder.Property(c => c.valorVtaUsd)
         .IsRequired()
         .HasColumnType("double");
+        
 
-        builder.HasOne(c => c.Prenda)
-        .WithMany(c => c.Inventarios)
-        .HasForeignKey(c => c.IdPrendaFk);
+        builder.HasData(
+            new Inventario { Id = 1, CodigoInv = 12, valorVtaCop = 2.5, valorVtaUsd = 1600},
+            new Inventario { Id = 2, CodigoInv = 123, valorVtaCop = 1000, valorVtaUsd = 31.333},
+            new Inventario { Id = 3, CodigoInv = 24, valorVtaCop = 3900, valorVtaUsd = 42.1},
+            new Inventario { Id = 4, CodigoInv = 31, valorVtaCop = 11.322, valorVtaUsd = 27000}
+        );
     }
 }

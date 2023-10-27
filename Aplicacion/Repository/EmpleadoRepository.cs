@@ -14,13 +14,14 @@ public class EmpleadoRepository : GenericRepository<Empleado>, IEmpleado
         _context = context;
     }
 
-     public async Task<IEnumerable<Empleado>> ventas(string NombreEmpleado)
+     public async Task<IEnumerable<Empleado>> ventas(int empleadoId)
     {
         var empleadoEspe = await _context.Empleados
-            .Where(c => c.Nombre == NombreEmpleado)
+            .Where(c => c.IdEmp == empleadoId)
             .Include(c => c.Ventas)
+                .ThenInclude(c => c.DetallesVentas) 
             .ToListAsync();
-
-        return empleadoEspe;
+ 
+        return empleadoEspe; 
     } 
 }

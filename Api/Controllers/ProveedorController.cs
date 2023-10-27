@@ -105,6 +105,15 @@ public class ProveedorController : BaseApiController
         return NoContent();
     }
 
+    [HttpGet("insumosVenXProveedor")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<InsumoProveedorDto>>> GetInsumosVenXProveedor(string nitProveedor)
+    {
+        var insumosXProveedor = await unitofwork.InsumosProveedores.insumosXProveedor(nitProveedor);
+        return mapper.Map<List<InsumoProveedorDto>>(insumosXProveedor);
+    }
+
     private ActionResult Notfound()
     {
         throw new NotImplementedException();

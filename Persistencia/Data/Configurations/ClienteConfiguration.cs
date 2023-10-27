@@ -41,7 +41,7 @@ public class ClienteConfiguration : IEntityTypeConfiguration<Cliente>
         .HasForeignKey(c => c.IdTipoPersonaFk);
 
         builder.HasData(
-            new Cliente { Id = 1, FechaRegistro = DateTime.Now, IdCliente = "65564", Nombre = "Pri", IdTipoPersonaFk = 2, IdMunicipioFk = 2}, 
+            new Cliente { Id = 1, FechaRegistro = DateTime.Now, IdCliente = "65564", Nombre = "Pri", IdTipoPersonaFk = 2, IdMunicipioFk = 2},  
             new Cliente { Id = 2, FechaRegistro = DateTime.Now, IdCliente = "333", Nombre = "Maria", IdTipoPersonaFk = 1, IdMunicipioFk = 1},
             new Cliente { Id = 3, FechaRegistro = DateTime.Now, IdCliente = "777", Nombre = "Carlos", IdTipoPersonaFk = 1, IdMunicipioFk = 3}
         );

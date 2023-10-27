@@ -13,14 +13,4 @@ public class InsumoRepository : GenericRepository<Insumo>, IInsumo
     {
         _context = context;
     }
-
-    // public async Task<IEnumerable<Insumo>> mostrarDeterminado(int CodigoDeterminado)
-    // {
-    //     var determinado = await _context.Insumos
-    //         .Where(m => m.Prendas.Any(c => c.Prenda.IdPrenda == CodigoDeterminado ))
-    //         .Include(c => c.Insumos)
-    //         .ToListAsync();
-
-    //     return determinado;
-    // }
 }

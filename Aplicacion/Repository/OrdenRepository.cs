@@ -18,17 +18,11 @@ public class OrdenRepository : GenericRepository<Orden>, IOrden
     {
         var ordenesEnProceso = await _context.Ordenes
             .Where(c => c.Estado.Descripcion == "En proceso")
+            .Include(o => o.Cliente) 
+            .Include(o => o.Empleado) 
+            .Include(o => o.Estado) 
             .ToListAsync();
 
         return ordenesEnProceso;
-    } 
-
-    public async Task<IEnumerable<Orden>> ordenesClienteEspecifico(string idClientee)
-    {
-        var clienteEspecifico = await _context.Ordenes
-            .Where(c => c.Cliente.IdCliente == idClientee)
-            .ToListAsync();
-
-        return clienteEspecifico;
-    } 
+    }  
 }
